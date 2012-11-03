@@ -1,0 +1,43 @@
+
+@import helper._
+
+
+@main("text.to(WAV)") {
+	<br>
+  
+  <h1>text.to(WAV) Version: 1.0 ALPHA</h1>
+  <br>
+  <p>Welcome to <b>text.to(WAV)</b>.  From here you can create G711 ULAW prompts directly from text for use in UCCX and UCCE IVRs.
+  Please note, the speech quality is not great, and should only be used for testing and development. Please don't let your customers use these 
+  prompts in production!
+  </p>
+  <br>
+
+  
+  <div class="well" style="width: 40%; margin: 0px auto;">
+    <h2>Get started by adding a project:</h2>
+    <a href="/project" class="btn btn-primary btn-large btn-block">
+      + Add Project
+    </a>
+  
+</div>
+ 
+  <br>
+  <h2>Known Issues</h2>
+  <ul>
+  	<li>List All Prompts not baked</li>
+  	<li>No error checking in the forms</li>
+  	<li>Form errors are not gracefully handled</li>
+  	<li>Very large prompts may cause an error</li>
+  	<li>This is running on a free service with limited resources, currently not checking if over thresholds</li>
+  </ul>
+  <br>
+  <h2>About</h2>
+  Developed by <a href="mailto:dave.womer@@cdw.com">Dave Womer</a><br>
+  Using <a href="http://www.playframework.org">Play! Framework 2.0</a> and <a href="http://freetts.sourceforge.net/docs/index.php">Free TTS 1.2</a><br>
+  Copyright 2012 Dave Womer
+
+
+
+}	
+

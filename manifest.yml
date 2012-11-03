@@ -1,0 +1,16 @@
+--- 
+applications: 
+  dist/texttowav-1.0-SNAPSHOT.zip: 
+    mem: 256M
+    services: 
+      text_to_prompt: 
+        type: mysql
+    framework: 
+      info: 
+        exec: 
+        mem: 256M
+        description: Play Framework Application
+      name: play
+    instances: 1
+    url: ${name}.${target-base}
+    name: texttowav

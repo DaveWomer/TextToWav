@@ -1,0 +1,23 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+# Home page
+GET     /                           controllers.Application.index()
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.at(path="/public", file)
+
+#generate and list prompts
+POST	/project/:project/prompts 						controllers.Application.generatePrompts(project: Long)
+GET     /project/:project/prompts                 controllers.Application.listPrompts(project: Long)
+GET     /project/:project/prompts/:promptId/delete                 controllers.Application.deletePromptFromProject(promptId: Long, project: Long)
+GET     /project/:project/zip                 controllers.Application.getZipOfProjectFiles(project: Long)
+
+GET 	/prompts			controllers.Application.prompts()
+
+GET 	/project	controllers.Application.projects()
+POST	/project						controllers.Application.createProject()
+GET	/project/:id/delete	controllers.Application.deleteProject(id: Long)
+
+GET /prompt/:id	controllers.Application.getPromptWavFile(id: Long)

@@ -1,0 +1,45 @@
+@(projectForm: Form[Project], projects: List[models.Project])
+
+@import helper._
+
+
+@main("text.to(WAV) - Projects") {
+    <h1>Projects<br><small>List All</small></h1>
+	Found @projects.size() project(s)
+	
+    @form(action = routes.Application.createProject(), 'class -> "form-inline") { 
+		
+
+  		<input type="text" class="input-large" placeholder="Project Name" name="name">
+		
+		 <button type="submit" class="btn">Add</button>	
+		
+
+	}
+	
+	<table class="table table-striped table-bordered table-hover">
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Created</th>
+						<th>Action</th>
+					</tr>
+				</thead>
+				<tbody>
+					@for(project <- projects) {
+
+							<td ><a href="@routes.Application.listPrompts(project.id)">@project.name</a></td>
+							<td>@project.created</td>
+							<td>
+								<a href="@routes.Application.deleteProject(project.id)"><i class="icon-remove"></i></a>
+							</td>
+							
+						
+						</tr>
+						
+					}
+					
+				</tbody>
+				</table>
+	
+}
